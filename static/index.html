@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101a2b">
+    <title>BuildGuard AI | Construction Review</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="brand" href="/">
+            <span class="brand-icon">B</span>
+            <span>BuildGuard<b>AI</b></span>
+        </a>
+        <p class="nav-label">WORKSPACE</p>
+        <p class="nav-item active" href="#overview" >Overview </p>
+        <p class="nav-item" href="#upload">Upload</p>
+        <p class="nav-item" href="#report">Report</p>
+        <div class="sidebar-bottom">
+            <span class="status-dot"></span>
+            <span>Local development</span>
+            <small id="connection-status">Checking server.....</small>
+        </div>
+    </aside>
+      <main class="main-content" id="overview">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CONSTRUCTION INTELLIGENCE</p>
+        <h1>Project overview</h1>
+      </div>
+      <div class="profile">
+        <span class="avatar">BG</span>
+        <span>My workspace</span>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow light">BUILD WITH MORE CONFIDENCE</p>
+        <h2>Spot potential issues.<br>Review before you build.</h2>
+        <p>Start a drawing review and organise the information
+           your construction team needs to verify.</p>
+        <a class="primary-button" href="#upload">+ New blueprint review</a>
+      </div>
+      <div class="blueprint-art" aria-hidden="true">
+        <div class="plan plan-one"></div>
+        <div class="plan plan-two"></div>
+        <span class="plan-label">PLAN / 001</span>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-label">PROJECTS</span>
+        <strong>01</strong>
+        <span class="stat-note">Demo workspace</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">DRAWINGS UPLOADED</span>
+        <strong id="drawing-count">00</strong>
+        <span class="stat-note">This browser session</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">REVIEWS COMPLETED</span>
+        <strong>00</strong>
+        <span class="stat-note">Analysis not connected yet</span>
+      </article>
+    </section>
+
+    <section class="workspace-grid">
+      <article class="panel upload-panel" id="upload">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">STEP 01</p>
+            <h2>Upload a blueprint</h2>
+          </div>
+          <span class="tag">Prototype</span>
+        </div>
+
+        <p class="muted">Choose a drawing to begin. For now, the website
+           checks the file type and displays its name; it does not
+           upload or analyse the file.</p>
+
+        <label class="dropzone" id="dropzone" for="blueprint">
+          <span class="upload-icon">↑</span>
+          <strong>Choose your drawing</strong>
+          <span>Click here or drag a file into this area</span>
+          <small>PDF 10 MB maximum . Up to 50 pages</small>
+        </label>
+
+        <input
+          id="blueprint"
+          type="file"
+          accept=".pdf,application/pdf"
+          hidden
+        >
+
+        <div id="file-info" class="file-info" aria-live="polite">
+          No drawing selected
+        </div>
+
+        <button id="review-button" class="primary-button full-width" disabled>
+          Prepare review
+        </button>
+        <p id="upload-message" class="message" aria-live="polite"></p>
+      </article>
+
+      <article class="panel" id="report">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">STEP 02</p>
+            <h2>Review centre</h2>
+          </div>
+          <span class="review-icon">✓</span>
+        </div>
+
+        <div class="review-empty">
+          <div class="document-icon">▤</div>
+          <h3>Ready for your first drawing</h3>
+          <p>Select a sample blueprint to test the interface.
+             Verified engineering checks will be added in a later stage.</p>
+        </div>
+
+        <div class="notice">
+          <strong>Important safety note</strong>
+          <p>This prototype does not assess structural safety,
+             certify buildings or replace a qualified engineer.</p>
+        </div>
+        <div id="analysis-result" class="analysis-result" aria-live="polite" hidden></div>
+      </article>
+    </section>
+
+    <footer>
+      BuildGuard AI · Early development prototype · Not for safety certification
+    </footer>
+  </main>
+    
+</body>
+</html>
